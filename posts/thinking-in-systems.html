@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="系统思维：从写代码到解决问题的通用框架">
+  <title>系统思维 · Stone 博客</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav class="nav">
+    <div class="container container-wide nav-inner">
+      <a href="../index.html" class="nav-logo">Stone</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">&#127769;</button>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-label="菜单">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- 博文正文 -->
+  <article class="post-page">
+    <div class="container">
+      <a href="../index.html" class="back-home">&larr; 返回首页</a>
+
+      <header class="post-header">
+        <h1>系统思维：从写代码到解决问题的通用框架</h1>
+        <div class="post-meta">
+          <span>2026 年 06 月 17 日</span>
+          <span class="post-tags" style="display:inline-flex;gap:6px;">
+            <span class="post-tag">技术</span>
+            <span class="post-tag">随笔</span>
+          </span>
+        </div>
+      </header>
+
+      <div class="post-body">
+        <p>几年前，我在调试一个线上故障时花了整整一个下午。表面上，问题是一个空指针异常——某个对象没有做 null 检查。但如果只看这一行代码，就永远看不到真正的问题。</p>
+
+        <p>那个 null 的来源是一个上游服务的超时。超时是因为下游数据库连接池被打满了。连接池被打满是因为一个定时任务没有限流。定时任务没有限流是因为没有人意识到它会和高峰期流量叠加。</p>
+
+        <p>你看，一个空指针的背后，是整个系统的相互作用在某一刻达到了临界点。</p>
+
+        <p>这就是系统思维。</p>
+
+        <h2>什么是系统思维？</h2>
+
+        <p>系统思维是一种看问题的方式。它不把问题看作孤立的碎片，而是看作一个由相互联系的部分构成的整体。在系统思维的视角下：</p>
+
+        <ul>
+          <li>一个问题很少只有一个原因</li>
+          <li>一个改动很少只有一个后果</li>
+          <li>各个部分之间的关系往往比部分本身更重要</li>
+        </ul>
+
+        <p>这种思维方式对程序员来说尤其重要，因为我们每天的工作就是在各种系统中——代码系统、数据系统、团队系统、业务系统——寻找杠杆点。</p>
+
+        <h2>一个简单的思维模型</h2>
+
+        <p>我常用一个三层的模型来帮助自己建立系统思维：</p>
+
+        <h3>第一层：事件</h3>
+        <p>这是最表面的一层，就是我们直接看到的现象。比如：服务器返回 502 错误。这一层的特点是——你只能被动反应，无法真正解决问题。</p>
+
+        <h3>第二层：模式</h3>
+        <p>把时间维度拉长，会发现事件不是孤立的。502 可能过去三周发生了六次。模式比事件更重要，因为它指向了系统层面的问题。</p>
+
+        <h3>第三层：结构</h3>
+        <p>是什么导致了模式？可能是部署流程缺少自动化测试，可能是架构设计上单点太多，也可能是团队缺乏运行时的可观测性。找到这一层，才能找到真正的杠杆点。</p>
+
+        <blockquote>
+          "今天的问题来自于昨天的解决方案。" — 唐奈拉·梅多斯
+        </blockquote>
+
+        <h2>在编程中的应用</h2>
+
+        <p>具体到写代码，系统思维意味着什么呢？</p>
+
+        <ul>
+          <li><strong>写代码前先画图</strong>：简单的架构图、数据流图，能让你看清依赖和边界</li>
+          <li><strong>考虑反馈回路</strong>：这个修改会不会导致另一个系统自动放大或缩小它的行为？</li>
+          <li><strong>关注接口而非实现</strong>：系统的健康取决于各个部分如何连接，而不是每个部分内部有多精致</li>
+          <li><strong>理解延迟</strong>：系统中很少有事情是瞬间发生的。反馈的延迟经常导致过度调节</li>
+        </ul>
+
+        <h2>更大的图景</h2>
+
+        <p>我越来越觉得，系统思维不只是一个技术工具。它是一种看待世界的方式。理解了系统的运作方式，你会在很多地方看到相似的模式：生态系统的平衡、经济的周期、组织的演变，甚至自己日常习惯的形成机制。</p>
+
+        <p>理解和尊重这些系统，不是让我们去控制它们——而是让我们更智慧地与它们共处。</p>
+
+        <hr>
+
+        <p><em>参考书目：Donella Meadows 的《Thinking in Systems》是了解系统思维最好的入门读物。</em></p>
+
+        <p>— Stone<br>2026 年 6 月 17 日</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Stone · 用 &#10084; 和 &#9749; 写成</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

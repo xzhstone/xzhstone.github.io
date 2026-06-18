@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stone 的个人博客 —— 记录技术、设计和生活思考">
+  <title>Stone · 博客</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav class="nav">
+    <div class="container container-wide nav-inner">
+      <a href="/" class="nav-logo">Stone</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">首页</a></li>
+        <li><a href="about.html">关于</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-label="菜单">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Hi，我是 Stone</h1>
+      <p class="subtitle">
+        一个热爱技术、设计和生活的写作者。<br>
+        在这里记录学习的点滴、项目的思考，以及偶尔的胡思乱想。
+      </p>
+    </div>
+  </section>
+
+  <!-- 博文列表 -->
+  <main class="container">
+    <h2 class="section-title">最新文章</h2>
+
+    <!-- 标签筛选 -->
+    <div id="tags-filter" class="tags-filter">
+      <button data-tag="all" class="active">全部</button>
+      <button data-tag="技术">技术</button>
+      <button data-tag="生活">生活</button>
+      <button data-tag="设计">设计</button>
+      <button data-tag="随笔">随笔</button>
+    </div>
+
+    <div id="post-count" class="post-count">3 篇文章</div>
+
+    <div class="posts-list">
+      <!-- 博客文章列表 —— 由 JS 动态从 posts/index.json 加载 -->
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Stone · 用 ❤️ 和 ☕ 写成</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/posts.js"></script>
+</body>
+</html>
