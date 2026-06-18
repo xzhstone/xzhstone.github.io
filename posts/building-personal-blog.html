@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="从零搭建个人博客：技术栈与设计思路">
+  <title>从零搭建个人博客 · Stone 博客</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav class="nav">
+    <div class="container container-wide nav-inner">
+      <a href="../index.html" class="nav-logo">Stone</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">&#127769;</button>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-label="菜单">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- 博文正文 -->
+  <article class="post-page">
+    <div class="container">
+      <a href="../index.html" class="back-home">&larr; 返回首页</a>
+
+      <header class="post-header">
+        <h1>从零搭建个人博客：技术栈与设计思路</h1>
+        <div class="post-meta">
+          <span>2026 年 06 月 18 日</span>
+          <span class="post-tags" style="display:inline-flex;gap:6px;">
+            <span class="post-tag">技术</span>
+            <span class="post-tag">设计</span>
+          </span>
+        </div>
+      </header>
+
+      <div class="post-body">
+        <p>这篇博客本身就是用本文介绍的方式搭建的。我想记录一下构建过程中的技术选择和设计思考。</p>
+
+        <h2>为什么不用框架？</h2>
+
+        <p>在决定搭建博客时，我面临一个选择：用成熟的博客框架（如 Hugo、Ghost、WordPress）还是自己从零写。最终我选择了后者，原因很简单：</p>
+
+        <ul>
+          <li><strong>极致的控制力</strong> — 每一行代码都知道在做什么，没有黑盒</li>
+          <li><strong>极小的体积</strong> — 没有框架依赖，页面加载几乎就是文本传输的时间</li>
+          <li><strong>写作的核心</strong> — 最少的工具噪音，最直接的内容呈现</li>
+        </ul>
+
+        <p>当然，这也有代价：没有 Markdown 渲染、没有自动 RSS、没有评论系统。但对于一个以写作为核心的站点来说，这些功能可以用轻量的方式逐个添加。</p>
+
+        <h2>技术架构</h2>
+
+        <p>整个站点由三部分组成：</p>
+
+        <h3>数据层：JSON 元数据</h3>
+        <p>所有文章的元信息统一存放在 <code>posts/index.json</code> 中，包括标题、日期、标签和文件路径。首页通过 JS 异步加载这个 JSON 并渲染列表。这样做的好处是新增文章只需要写 HTML + 更新 JSON，不需要改模板。</p>
+
+        <h3>展示层：纯 HTML + CSS</h3>
+        <p>每个页面都是独立的 HTML 文件，CSS 通过自定义属性（CSS Variables）实现了完整的明暗主题系统。设计上追求：</p>
+        <ul>
+          <li>干净、留白充足，让阅读本身成为焦点</li>
+          <li>响应式布局，从手机到大屏都有好的体验</li>
+          <li>明暗主题自动跟随系统，也支持手动切换</li>
+        </ul>
+
+        <h3>交互层：轻量 JavaScript</h3>
+        <p>JavaScript 做了三件事：</p>
+        <ul>
+          <li>主题切换（可持久化到 localStorage）</li>
+          <li>移动端菜单</li>
+          <li>文章列表的标签筛选</li>
+        </ul>
+
+        <p>总代码量 &lt; 200 行 JS，没有框架、没有构建工具。</p>
+
+        <h2>CSS 主题系统</h2>
+
+        <p>颜色方案使用 CSS 自定义属性（<code>:root</code> 变量），通过 <code>@media (prefers-color-scheme: dark)</code> 自动适配系统主题。用户手动切换时，在 <code>&lt;html&gt;</code> 上添加 <code>.dark</code> 或 <code>.light</code> 类来覆盖，并将选择存储到 localStorage。</p>
+
+        <pre><code>:root { --bg: #fafafa; --text: #1a1a2e; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0f0f1a; --text: #e2e8f0; }
+}
+:root.dark { /* 手动暗色覆盖 */ }
+:root.light { /* 手动明色覆盖 */ }</code></pre>
+
+        <h2>部署方案</h2>
+
+        <p>静态站点的部署方案有很多选择。目前的计划是：</p>
+        <ul>
+          <li><strong>GitHub Pages</strong> — 简单免费，适合静态站点</li>
+          <li><strong>Vercel / Netlify</strong> — 如果需要更高级的功能（如 Serverless 函数），也是一个好选择</li>
+        </ul>
+
+        <p>静态站点最大的好处就是部署极其简单——直接把文件丢到服务器上就可以访问。</p>
+
+        <hr>
+
+        <p>这就是这个博客的搭建过程。如果你也在考虑搭建自己的博客，我的建议是：不管用什么工具，开始写才是最重要的事。</p>
+
+        <p>— Stone<br>2026 年 6 月 18 日</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Stone · 用 &#10084; 和 &#9749; 写成</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

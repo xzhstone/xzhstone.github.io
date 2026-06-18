@@ -1,0 +1,26 @@
+[
+  {
+    "id": "hello-world",
+    "title": "Hello, World — 博客的第一篇文章",
+    "date": "2026-06-18",
+    "tags": ["随笔", "生活"],
+    "excerpt": "每一个博客都始于一声问候。这篇简单地聊聊我为什么要写、写什么，以及这个博客接下来的方向。",
+    "file": "posts/hello-world.html"
+  },
+  {
+    "id": "building-personal-blog",
+    "title": "从零搭建个人博客：技术栈与设计思路",
+    "date": "2026-06-18",
+    "tags": ["技术", "设计"],
+    "excerpt": "这篇记录了用纯 HTML/CSS/JS 搭建静态博客的完整过程，包括结构设计、明暗主题、响应式布局和部署方案。",
+    "file": "posts/building-personal-blog.html"
+  },
+  {
+    "id": "thinking-in-systems",
+    "title": "系统思维：从写代码到解决问题的通用框架",
+    "date": "2026-06-17",
+    "tags": ["技术", "随笔"],
+    "excerpt": "系统思维是一种观察世界的方式。这篇文章分享了我如何将系统思维应用到编程、项目管理和日常决策中。",
+    "file": "posts/thinking-in-systems.html"
+  }
+]
