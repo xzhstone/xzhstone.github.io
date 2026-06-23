@@ -17,15 +17,103 @@
         <li><a href="index.html" class="active">首页</a></li>
         <li><a href="about.html">关于</a></li>
       </ul>
-      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
-      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-label="菜单">☰</button>
+      <div class="nav-deco">
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-label="菜单">☰</button>
+      </div>
     </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
+    <!-- 浮动装饰 -->
+    <div class="hero-floaties">
+      <span class="hero-floaty">&#10024;</span>
+      <span class="hero-floaty">&#9829;</span>
+      <span class="hero-floaty">&#10022;</span>
+      <span class="hero-floaty">&#9733;</span>
+      <span class="hero-floaty">&#9829;</span>
+      <span class="hero-floaty">&#10024;</span>
+    </div>
+
     <div class="container">
-      <h1>Hi，我是 Stone</h1>
+      <div class="hero-illust">
+        <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+          <!-- 头发后方（长发） -->
+          <path d="M58 70 Q30 130 25 190 Q40 200 60 195 Q65 160 68 140 Q70 165 72 195 Q88 200 100 195 Q100 160 98 140 Q102 165 105 195 Q120 200 140 195 Q145 130 142 70" fill="url(#hairGrad)" opacity="0.7"/>
+          
+          <!-- 头部基础 -->
+          <ellipse cx="100" cy="90" rx="46" ry="52" fill="#fde8e0"/>
+          
+          <!-- 刘海 -->
+          <path d="M54 80 Q52 55 65 48 Q75 42 85 40 Q100 38 115 40 Q128 42 135 48 Q148 55 146 80 Q140 60 130 55 Q120 50 100 50 Q80 50 70 55 Q60 60 54 80Z" fill="url(#hairGrad)"/>
+          <path d="M54 80 Q50 70 52 62 Q58 52 70 48 L75 52 Q62 55 56 65 Q55 72 56 82Z" fill="url(#hairGrad)"/>
+          <path d="M146 80 Q150 70 148 62 Q142 52 130 48 L125 52 Q138 55 144 65 Q145 72 144 82Z" fill="url(#hairGrad)"/>
+          
+          <!-- 呆毛 -->
+          <path d="M95 38 Q92 28 97 20 Q102 28 100 38" fill="url(#hairGrad)" stroke="none"/>
+          <path d="M105 40 Q108 30 115 25 Q110 30 108 42" fill="url(#hairGrad)" opacity="0.9"/>
+          
+          <!-- 眼睛 -->
+          <ellipse cx="84" cy="96" rx="11" ry="13" fill="#0f172a"/>
+          <ellipse cx="116" cy="96" rx="11" ry="13" fill="#0f172a"/>
+          <ellipse cx="84" cy="96" rx="9" ry="11" fill="#1e293b"/>
+          <ellipse cx="116" cy="96" rx="9" ry="11" fill="#1e293b"/>
+          <!-- 高光 -->
+          <ellipse cx="86" cy="91" rx="3.5" ry="3" fill="#fff" opacity="0.9"/>
+          <ellipse cx="118" cy="91" rx="3.5" ry="3" fill="#fff" opacity="0.9"/>
+          <circle cx="80" cy="99" r="2" fill="#fff" opacity="0.6"/>
+          <circle cx="112" cy="99" r="2" fill="#fff" opacity="0.6"/>
+          <!-- 腮红 -->
+          <ellipse cx="72" cy="108" rx="8" ry="4" fill="#93c5fd" opacity="0.5"/>
+          <ellipse cx="128" cy="108" rx="8" ry="4" fill="#93c5fd" opacity="0.5"/>
+          
+          <!-- 嘴巴 -->
+          <path d="M93 110 Q100 117 107 110" fill="none" stroke="#c08497" stroke-width="1.8" stroke-linecap="round"/>
+          
+          <!-- 头发侧边 -->
+          <path d="M54 75 Q42 100 40 130 Q42 125 46 115 Q50 100 54 82Z" fill="url(#hairGrad)"/>
+          <path d="M146 75 Q158 100 160 130 Q158 125 154 115 Q150 100 146 82Z" fill="url(#hairGrad)"/>
+
+          <!-- 侧边辫子 -->
+          <path d="M42 130 Q35 155 38 175 Q42 180 48 175 Q46 160 48 145 Q45 140 42 130Z" fill="url(#hairGrad)"/>
+          <path d="M158 130 Q165 155 162 175 Q158 180 152 175 Q154 160 152 145 Q155 140 158 130Z" fill="url(#hairGrad)"/>
+          <!-- 辫子蝴蝶结 -->
+          <path d="M38 130 Q30 125 35 120 Q40 125 38 130Z" fill="#2563eb" opacity="0.7"/>
+          <path d="M162 130 Q170 125 165 120 Q160 125 162 130Z" fill="#2563eb" opacity="0.7"/>
+
+          <!-- 头饰（小花） -->
+          <circle cx="60" cy="65" r="5" fill="#93c5fd" opacity="0.8"/>
+          <circle cx="60" cy="65" r="2" fill="#2563eb" opacity="0.6"/>
+          <circle cx="140" cy="65" r="5" fill="#93c5fd" opacity="0.8"/>
+          <circle cx="140" cy="65" r="2" fill="#2563eb" opacity="0.6"/>
+          
+          <!-- 领口（水手服） -->
+          <path d="M76 135 L100 150 L124 135 L118 140 L112 155 Q106 165 100 168 Q94 165 88 155 L82 140Z" fill="#fff" stroke="#bfdbfe" stroke-width="1.5"/>
+          <path d="M100 160 L100 190" stroke="#bfdbfe" stroke-width="1.5" opacity="0.5"/>
+          <!-- 领巾 -->
+          <path d="M82 140 Q76 142 72 148 Q78 144 82 142" fill="#2563eb" opacity="0.6"/>
+          <path d="M118 140 Q124 142 128 148 Q122 144 118 142" fill="#2563eb" opacity="0.6"/>
+          
+          <!-- 装饰 -->
+          <text x="26" y="36" font-size="14" fill="#93c5fd" opacity="0.4">&#9733;</text>
+          <text x="158" y="50" font-size="10" fill="#93c5fd" opacity="0.4">&#9829;</text>
+          <text x="170" y="170" font-size="12" fill="#93c5fd" opacity="0.3">&#10024;</text>
+          
+          <defs>
+            <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#60a5fa"/>
+              <stop offset="50%" stop-color="#3b82f6"/>
+              <stop offset="100%" stop-color="#2563eb"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="hero-top-deco">
+        <span>&#9839; WELCOME &#9839;</span>
+      </div>
+      <h1>Hi，我是 <span class="highlight">Stone</span></h1>
       <p class="subtitle">
         一个热爱技术、设计和生活的写作者。<br>
         在这里记录学习的点滴、项目的思考，以及偶尔的胡思乱想。
@@ -56,6 +144,7 @@
   <!-- 页脚 -->
   <footer class="footer">
     <div class="container">
+      <div class="footer-deco">✿  ✿  ✿</div>
       <p>&copy; 2026 Stone · 用 ❤️ 和 ☕ 写成</p>
     </div>
   </footer>
